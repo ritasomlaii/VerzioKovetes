@@ -70,6 +70,15 @@ namespace UserMaintanence {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fájlbaírás.
+        /// </summary>
+        internal static string AddFile {
+            get {
+                return ResourceManager.GetString("AddFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Teljesnév.
         /// </summary>
         internal static string FullName {
