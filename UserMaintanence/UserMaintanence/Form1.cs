@@ -58,5 +58,13 @@ namespace UserMaintanence
                 }
             
         }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            for (int  i = 0;  i < users.Count;  i++)
+            {
+                users.RemoveAt(i);
+            }
+        }
     }
 }

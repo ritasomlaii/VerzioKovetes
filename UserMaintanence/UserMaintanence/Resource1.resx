@@ -123,6 +123,9 @@
   <data name="AddFile" xml:space="preserve">
     <value>Fájlbaírás</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Törlés</value>
+  </data>
   <data name="FullName" xml:space="preserve">
     <value>Teljesnév</value>
   </data>
