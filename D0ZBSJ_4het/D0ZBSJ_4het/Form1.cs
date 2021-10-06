@@ -145,7 +145,20 @@ namespace D0ZBSJ_4het
             headerRange.RowHeight = 40;
             headerRange.Interior.Color = Color.LightBlue;
             headerRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
+
+            int lastrowID = xlSheet.UsedRange.Rows.Count;
+
+            Excel.Range cellRange = xlSheet.get_Range(GetCell(2, 1), GetCell(lastrowID,9));
+            cellRange.Font.Italic = true;
+            cellRange.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            cellRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+            cellRange.EntireColumn.AutoFit();
+            cellRange.RowHeight = 20;
+            cellRange.Interior.Color = Color.PeachPuff;
+            cellRange.BorderAround2(Excel.XlLineStyle.xlDashDot, Excel.XlBorderWeight.xlMedium);
         }
+
+        
 
         public string GetCell(int x, int y)
         {
