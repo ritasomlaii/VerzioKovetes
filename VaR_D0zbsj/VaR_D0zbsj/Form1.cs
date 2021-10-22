@@ -22,6 +22,8 @@ namespace VaR_D0zbsj
         {
             InitializeComponent();
 
+            CreatePortfolio();
+
             Ticks = context.Ticks.ToList();
             dGTick.DataSource = Ticks;
             List<Tick> l = context.Ticks.ToList();
