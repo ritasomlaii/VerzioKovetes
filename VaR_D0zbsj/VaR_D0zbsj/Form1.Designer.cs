@@ -31,6 +31,7 @@ namespace VaR_D0zbsj
         {
             this.dGTick = new System.Windows.Forms.DataGridView();
             this.dGPortfolio = new System.Windows.Forms.DataGridView();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGTick)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGPortfolio)).BeginInit();
             this.SuspendLayout();
@@ -55,11 +56,22 @@ namespace VaR_D0zbsj
             this.dGPortfolio.Size = new System.Drawing.Size(566, 391);
             this.dGPortfolio.TabIndex = 1;
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(101, 624);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(237, 74);
+            this.btnSave.TabIndex = 2;
+            this.btnSave.Text = "Mentés";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1513, 809);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dGPortfolio);
             this.Controls.Add(this.dGTick);
             this.Name = "Form1";
@@ -74,6 +86,7 @@ namespace VaR_D0zbsj
 
         private System.Windows.Forms.DataGridView dGTick;
         private System.Windows.Forms.DataGridView dGPortfolio;
+        private System.Windows.Forms.Button btnSave;
     }
 }
 
