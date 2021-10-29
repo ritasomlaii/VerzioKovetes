@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using webszolgaltatas_D0ZBSJ.Entities;
 using webszolgaltatas_D0ZBSJ.MnbServiceReference;
 
 namespace webszolgaltatas_D0ZBSJ
 {
     public partial class Form1 : Form
     {
+        BindingList<RateData> Rates = new BindingList<RateData>();
+
         public Form1()
         {
             InitializeComponent();
@@ -28,6 +31,8 @@ namespace webszolgaltatas_D0ZBSJ
 
             var response = mnbService.GetExchangeRates(request);
             var result = response.GetExchangeRatesResult;
+
+            dGRate.DataSource = Rates;
         }
 
         
