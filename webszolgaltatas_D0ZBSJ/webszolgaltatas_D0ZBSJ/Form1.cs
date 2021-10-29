@@ -17,12 +17,27 @@ namespace webszolgaltatas_D0ZBSJ
     public partial class Form1 : Form
     {
         BindingList<RateData> Rates = new BindingList<RateData>();
+        BindingList<string> Currencies = new BindingList<string>();
 
         public Form1()
         {
             InitializeComponent();
 
+           /* var mnbService = new MNBArfolyamServiceSoapClient();
+
+            var request = new GetCurrenciesRequestBody()
+            {
+                
+            };
+
+            var response = mnbService.GetCurrencies(request);
+            var result = response.GetCurrenciesResult;
+
+
+            comboBox1.DataSource = Currencies;*/
             RefreshData();
+
+            
 
         }
 
