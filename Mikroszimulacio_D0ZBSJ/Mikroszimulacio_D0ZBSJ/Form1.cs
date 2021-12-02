@@ -18,7 +18,7 @@ namespace Mikroszimulacio_D0ZBSJ
         List<BirthProbability> BirthProbabilities = new List<BirthProbability>();
         List<DeathProbability> DeathProbabilities = new List<DeathProbability>();
 
-        Random rng = new Random(1234);
+        Random rng = new Random(1500);
         public Form1()
         {
             InitializeComponent();
@@ -27,6 +27,22 @@ namespace Mikroszimulacio_D0ZBSJ
             Population = GetPopulation(@"C:\Temp\nép.csv");
 
             dGProba.DataSource = Population;
+
+            for (int year = 2005; year <= 2024; year++)
+            {
+                for (int pop = 0; pop < Population.Count(); pop++)
+                {
+
+                }
+
+                int numberOfMale = (from x in Population
+                                    where x.Gender == Gender.male && x.IsAlive
+                                    select x).Count();
+                int numberOfFemales = (from x in Population
+                                       where x.Gender == Gender.woman && x.IsAlive
+                                       select x).Count();
+                Console.WriteLine(string.Format("Év:{0} Fiúk:{1} Lányok:{2}", year, numberOfMale, numberOfFemales));
+            }
         }
 
         public List<Person> GetPopulation(string csvpath)
