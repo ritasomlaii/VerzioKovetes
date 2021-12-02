@@ -13,9 +13,9 @@ namespace Mikroszimulacio_D0ZBSJ
 {
     public partial class Form1 : Form
     {
-
-        Gender FerfiNeme = Gender.male;
-        Gender NoNeme = (Gender)2;
+        List<Person> Population = new List<Person>();
+        List<BirthProbability> BirthProbabilities = new List<BirthProbability>();
+        List<DeathProbability> DeathProbabilities = new List<DeathProbability>();
         public Form1()
         {
             InitializeComponent();
