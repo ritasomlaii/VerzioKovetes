@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mikroszimulacio_D0ZBSJ.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,9 @@ namespace Mikroszimulacio_D0ZBSJ
 {
     public partial class Form1 : Form
     {
+
+        Gender FerfiNeme = Gender.male;
+        Gender NoNeme = (Gender)2;
         public Form1()
         {
             InitializeComponent();
