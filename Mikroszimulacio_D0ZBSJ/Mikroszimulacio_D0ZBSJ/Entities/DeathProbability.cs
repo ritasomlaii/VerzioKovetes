@@ -11,5 +11,6 @@ namespace Mikroszimulacio_D0ZBSJ.Entities
         public Gender Gender { get; set; }
         public int Age { get; set; }
         public double DeathP { get; set; }
+        public object P { get; internal set; }
     }
 }
