@@ -22,7 +22,9 @@ namespace Mikroszimulacio_D0ZBSJ
             InitializeComponent();
 
 
-            Population = GetPopulation(@"C:\Temp\név.csv");
+            Population = GetPopulation(@"C:\Temp\nép.csv");
+
+            dGProba.DataSource = Population;
         }
 
         public List<Person> GetPopulation(string csvpath)
