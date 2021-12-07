@@ -37,6 +37,11 @@ namespace EvoluciosAlgoritmus_D0ZBSJ
                 gc.AddPlayer(numberOfSteps);
             }
             gc.Start();
+
+            var playerList = from x in gc.GetCurrentPlayers()
+                             orderby x.GetFitness() descending
+                             select x;
+            var topPlayers = playerList.Take(populationSize / 2).ToList();
         }
 
         private void Gc_GameOver(object sender)
