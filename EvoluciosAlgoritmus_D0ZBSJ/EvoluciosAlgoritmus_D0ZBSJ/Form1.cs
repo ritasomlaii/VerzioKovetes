@@ -15,6 +15,11 @@ namespace EvoluciosAlgoritmus_D0ZBSJ
     {
         GameController gc = new GameController();
         GameArea ga;
+
+        int populationSize = 100;
+        int numberOfSteps = 10;
+        int numberOfStepsIncrement = 10;
+        int generation = 1;
         public Form1()
         {
             InitializeComponent();
@@ -22,8 +27,14 @@ namespace EvoluciosAlgoritmus_D0ZBSJ
             ga = gc.ActivateDisplay();
             this.Controls.Add(ga);
 
-            gc.AddPlayer();
-            gc.Start(true);
+            //gc.AddPlayer();
+            //gc.Start(true);
+
+            for (int i = 0; i < populationSize; i++)
+            {
+                gc.AddPlayer(numberOfSteps);
+            }
+            gc.Start();
         }
     }
 }
