@@ -29,13 +29,34 @@ namespace EvoluciosAlgoritmus_D0ZBSJ
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.lblgen = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // lblgen
+            // 
+            this.lblgen.AutoSize = true;
+            this.lblgen.Location = new System.Drawing.Point(12, 9);
+            this.lblgen.Name = "lblgen";
+            this.lblgen.Size = new System.Drawing.Size(92, 20);
+            this.lblgen.TabIndex = 0;
+            this.lblgen.Text = "1.generáció";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblgen);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblgen;
     }
 }
 
