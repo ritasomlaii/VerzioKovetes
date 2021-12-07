@@ -20,6 +20,8 @@ namespace EvoluciosAlgoritmus_D0ZBSJ
         int numberOfSteps = 10;
         int numberOfStepsIncrement = 10;
         int generation = 1;
+
+        Brain winner = null;
         public Form1()
         {
             InitializeComponent();
@@ -51,6 +53,16 @@ namespace EvoluciosAlgoritmus_D0ZBSJ
                              orderby x.GetFitness() descending
                              select x;
             var topPlayers = playerList.Take(populationSize / 2).ToList();
+
+            var winners = from p in topPlayers
+                          where p.IsWinner
+                          select p;
+            if (winners.Count() > 0)
+            {
+                winner = winners.FirstOrDefault().Brain.Clone();
+                gc.GameOver -= Gc_GameOver;
+                return;
+            }
 
             gc.ResetCurrentLevel();
             foreach (var p in topPlayers)
