@@ -30,6 +30,7 @@ namespace EvoluciosAlgoritmus_D0ZBSJ
         private void InitializeComponent()
         {
             this.lblgen = new System.Windows.Forms.Label();
+            this.btnStart = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblgen
@@ -41,11 +42,22 @@ namespace EvoluciosAlgoritmus_D0ZBSJ
             this.lblgen.TabIndex = 0;
             this.lblgen.Text = "1.generáció";
             // 
+            // btnStart
+            // 
+            this.btnStart.Location = new System.Drawing.Point(16, 372);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(126, 66);
+            this.btnStart.TabIndex = 1;
+            this.btnStart.Text = "START";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.lblgen);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -57,6 +69,7 @@ namespace EvoluciosAlgoritmus_D0ZBSJ
         #endregion
 
         private System.Windows.Forms.Label lblgen;
+        private System.Windows.Forms.Button btnStart;
     }
 }
 

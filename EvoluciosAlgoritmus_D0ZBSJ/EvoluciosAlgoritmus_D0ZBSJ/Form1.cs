@@ -40,7 +40,7 @@ namespace EvoluciosAlgoritmus_D0ZBSJ
             }
             gc.Start();
 
-            
+            btnStart.Hide();
         }
 
         private void Gc_GameOver(object sender)
@@ -80,6 +80,21 @@ namespace EvoluciosAlgoritmus_D0ZBSJ
             }
             gc.Start();
 
+            
+            if (winner != null)
+            {
+                btnStart.Show();
+            }
+
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            gc.ResetCurrentLevel();
+            gc.AddPlayer(winner.Clone());
+            gc.AddPlayer();
+            ga.Focus();
+            gc.Start(true);
         }
     }
 }
