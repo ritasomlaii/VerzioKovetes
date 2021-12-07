@@ -38,10 +38,7 @@ namespace EvoluciosAlgoritmus_D0ZBSJ
             }
             gc.Start();
 
-            var playerList = from x in gc.GetCurrentPlayers()
-                             orderby x.GetFitness() descending
-                             select x;
-            var topPlayers = playerList.Take(populationSize / 2).ToList();
+            
         }
 
         private void Gc_GameOver(object sender)
@@ -49,6 +46,27 @@ namespace EvoluciosAlgoritmus_D0ZBSJ
             generation++;
             lblgen.BringToFront();
             lblgen.Text = string.Format("{0}.generáció", generation);
+
+            var playerList = from x in gc.GetCurrentPlayers()
+                             orderby x.GetFitness() descending
+                             select x;
+            var topPlayers = playerList.Take(populationSize / 2).ToList();
+
+            gc.ResetCurrentLevel();
+            foreach (var p in topPlayers)
+            {
+                var b = p.Brain.Clone();
+                if (generation % 3 == 0)
+                    gc.AddPlayer(b.ExpandBrain(numberOfStepsIncrement));
+                else
+                    gc.AddPlayer(b);
+
+                if (generation % 3 == 0)
+                    gc.AddPlayer(b.Mutate().ExpandBrain(numberOfStepsIncrement));
+                else
+                    gc.AddPlayer(b.Mutate());
+            }
+            gc.Start();
 
         }
     }
